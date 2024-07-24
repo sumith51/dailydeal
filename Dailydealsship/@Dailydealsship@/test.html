@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Coupon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #coupon-message {
+            color: green;
+            margin-top: 10px;
+        }
+        #coupon-error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+<!-- Customizable CSS -->
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/blue.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.css">
+<link rel="stylesheet" href="assets/css/owl.transitions.css">
+<link rel="stylesheet" href="assets/css/animate.min.css">
+<link rel="stylesheet" href="assets/css/rateit.css">
+<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+
+<!-- Icons/Glyphs -->
+<link rel="stylesheet" href="assets/css/font-awesome.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Barlow:200,300,300i,400,400i,500,500i,600,700,800" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <p>Cart Total: ₹<span id="cart-total">2000</span></p>
+    <div class="form-group">
+    <label for="coupon-code"  class="form-control unicase-form-control text-input" placeholder="You Coupon.." size="50">Coupon Code:</label>
+    <input type="text" id="coupon-code" style="height: 36px;">
+    <button onclick="applyCoupon()" class="btn-upper btn btn-primary checkout-page-button">Apply Coupon</button>
+    <p id="coupon-message"></p>
+    <p id="coupon-error"></p>
+</div>
+
+    <script>
+        const validCoupons = {
+            'DISCOUNT10': 200,
+            'DISCOUNT20': 400 ,
+            'DISCOUNT30': 600
+        };
+
+        function applyCoupon() {
+            const couponCode = document.getElementById('coupon-code').value;
+            const cartTotalElement = document.getElementById('cart-total');
+            const couponMessageElement = document.getElementById('coupon-message');
+            const couponErrorElement = document.getElementById('coupon-error');
+
+            if (validCoupons[couponCode]) {
+                const discount = validCoupons[couponCode];
+                const currentTotal = parseFloat(cartTotalElement.textContent);
+                const newTotal = currentTotal - discount;
+                cartTotalElement.textContent = newTotal.toFixed(2);
+                couponMessageElement.textContent = `Coupon applied successfully! You saved ₹${discount}.`;
+                couponErrorElement.textContent = '';
+            } else {
+                couponMessageElement.textContent = '';
+                couponErrorElement.textContent = 'Invalid coupon code. Please try again.';
+            }
+        }
+    </script>
+</body>
+</html>

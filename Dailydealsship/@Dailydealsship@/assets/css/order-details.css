@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.order-details {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.feedback {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback p {
+    margin: 0;
+    color: #ff4d4d;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.rating span {
+    font-size: 1.5em;
+    color: #ff4d4d;
+    margin: 0 2px;
+}
+
+.feedback button {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.feedback button:hover {
+    background-color: #e60000;
+}
+
+.order-tracking {
+    margin-bottom: 20px;
+}
+
+.order-tracking h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.order-tracking ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-tracking ul li {
+    margin-bottom: 10px; 
+    padding: 10px;
+
+}
+
+.show-more {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 0;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.actions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.actions button:hover {
+    background-color: #0056b3;
+}
+
+.order-return, .invoice-download, .order-summary {
+    margin-bottom: 20px;
+}
+
+.order-return h2, .order-summary h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.invoice-download button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.invoice-download button:hover {
+    background-color: #000;
+}
+
+.order-summary p {
+    margin: 5px 0;
+}
+#shipped{
+    /* background: rgb(194, 191, 191); */
+    background: #a09d9d2f;
+    padding: 10px;
+}
